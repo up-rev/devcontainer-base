@@ -24,9 +24,8 @@ RUN apt-get update && apt-get install -y --fix-missing --no-install-recommends \
     latexmk \
     texlive-science \
     texlive-formats-extra \ 
-    tex-gyre 
-
-RUN apt-get autoremove -y && \
+    tex-gyre && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* 
 
 #Copy the latest release of plantuml. Ubuntu 18.04 package manager has an older one without timing diagram support
